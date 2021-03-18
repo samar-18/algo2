@@ -1,0 +1,71 @@
+
+
+
+
+
+
+
+ALGORITHM 
+VAR
+    tab1 : ARRAY_OF INTEGER[3];
+    tab2 : ARRAY_OF INTEGER[4];
+    i,j : INTEGER;
+    sum:INTEGER:=0;
+    s:BOOLEAN:=false;
+BEGIN 
+    tab1 :=[3,1,7,9];
+    tab2 :=[2,4,1,9,3]; 
+    FOR j FROM 0 TO 4 STEP 1  DO   
+        FOR i F ROM 0 TO 3 STEP 1  DO   
+        
+        IF (tab2[j]=tab1[i]) THEN
+            s:=TRUE;
+        END_IF
+        END_FOR
+        IF (s=false) THEN
+            sum=sum+tab1[i];
+            
+        END_IF
+        s:=false;
+    END_FOR
+END
+
+
+
+
+
+
+
+
+
+ALGORITHM 
+VAR
+    tab1 : ARRAY_OF INTEGER[3];
+    tab2 : ARRAY_OF INTEGER[4];
+    i,j : INTEGER;
+    sum,key:INTEGER:=0;
+    s:BOOLEAN:=false;
+    htab: HASH_TABLE<INTEGER,INTEGER>
+BEGIN 
+    tab1 :=[3,1,7,9];
+    tab2 :=[2,4,1,9,3]; 
+    FOR j FROM 0 TO 4 STEP 1  DO   
+        FOR i F ROM 0 TO 3 STEP 1  DO   
+        
+        IF (tab2[j]=tab1[i]) THEN
+            s:=TRUE;
+        END_IF
+        END_FOR
+        IF (s=false) THEN
+            htab.insert(key,tab[i]);
+            key=key+1;
+            
+        END_IF
+        s:=false;
+    END_FOR
+        WHILE (htab.get(i)<>null) DO
+            sum:=sum+htab.get(i);
+        END_WHILE
+
+
+END
